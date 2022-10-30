@@ -32,4 +32,8 @@ pnpm build
 
 You can preview the production build with `pnpm preview`.
 
+## Deploy
+
+You can choose several provider to deploy this app, mine is Vercel
+
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
