@@ -6,7 +6,7 @@
 
 {#if main}
 	<h1
-		class={`text-4xl md:text-5xl font-light leading-[1.6] tracking-[0.08em] ${className}`}
+		class={`leading-[1.6] text-4xl md:leading-[1.6] md:text-5xl font-light xl:leading-[1.6] tracking-[0.08em] ${className}`}
 	>
 		<slot />
 	</h1>
