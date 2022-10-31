@@ -18,7 +18,9 @@
 </script>
 
 <div
-	class="flex h-full min-h-[350px] w-full flex-col items-center justify-between border-[0.5px] border-black"
+	class={`${
+		type === 'image' ? 'h-fit' : ' h-full'
+	}flex min-h-[350px] w-full flex-col items-center justify-between border-[0.5px] border-black`}
 >
 	<div
 		class={`flex w-full items-center justify-between border-b border-black ${
@@ -36,8 +38,12 @@
 	>
 		{#if type === 'avatar'}
 			<Avatar src="afochar-s-photo-hero.png" alt="Afochar S" />
-		{:else}
+		{:else if type === 'text'}
 			<div class="h-full max-h-[196px] w-full">
+				<img class="h-full w-full object-cover" src={image} {alt} />
+			</div>
+		{:else}
+			<div class="h-full max-h-[280px] w-full">
 				<img class="h-full w-full object-cover" src={image} {alt} />
 			</div>
 		{/if}
@@ -67,7 +73,13 @@
 	</div>
 
 	<div class="w-full justify-end">
-		<Button type="button" background full={true}>
+		<Button
+			type="button"
+			background
+			full={true}
+			weight="medium"
+			className="text-center"
+		>
 			{cta}
 		</Button>
 	</div>

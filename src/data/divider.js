@@ -44,17 +44,5 @@ export const divider = {
 			href: 'https://instagram.com/aflowchars',
 			label: 'Check'
 		}
-	],
-	copyright: [
-		{
-			type: 'left',
-			href: 'https://instagram.com/aflowchars',
-			label: 'Copyright'
-		},
-		{
-			type: 'right',
-			href: 'https://instagram.com/aflowchars',
-			label: 'Check'
-		}
 	]
 };

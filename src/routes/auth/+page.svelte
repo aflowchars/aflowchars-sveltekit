@@ -1,4 +1,11 @@
 <script lang="ts">
+	import Google from '$assets/icons/google.svelte';
+	import Avatar from '$components/atomics/Avatar.svelte';
+	import Heading from '$components/atomics/Heading.svelte';
+	import Para from '$components/atomics/Para.svelte';
+	import Button from '$components/moleculs/Button.svelte';
+	import Card from '$components/organisms/Card.svelte';
+	import Head from '$components/utilities/Head.svelte';
 	import { supabase } from '../../supabase';
 
 	let loading = false;
@@ -18,30 +25,102 @@
 	};
 </script>
 
-<div class="row flex-center flex">
-	<div class="col-6 form-widget" aria-live="polite">
-		<h1 class="header">Supabase + Svelte</h1>
-		<p class="description">Sign in via magic link with your email below</p>
-		<form class="form-widget" on:submit|preventDefault={handleLogin}>
-			<div>
+<Head title="Login" />
+
+<div
+	class="grid h-full min-h-[calc(100vh-96px)] grid-cols-12 place-items-center gap-16"
+>
+	<div class="col-start-1 col-end-6 py-24">
+		<Card
+			type="image"
+			tag="Login"
+			image={'portfolio-nur.jpg'}
+			alt="Portfolio Nur Photo"
+			cta="Lihat Video Lainnya"
+		/>
+	</div>
+
+	<div class="col-start-6 col-end-7 h-full place-self-center">
+		<div class="h-full w-px bg-black" />
+	</div>
+
+	<div class="col-start-7 col-end-12 w-full py-24" aria-live="polite">
+		<Heading type="large">Sign in Aflowchars</Heading>
+
+		<Button
+			type="button"
+			className="mt-4 mb-8 border border-black gap-2"
+			flow="row"
+		>
+			<Avatar
+				size="small"
+				src="afochar-s-photo-hero.png"
+				alt="Profile Avatar User"
+				className="ml-3"
+			/>
+
+			<div class="flex flex-col items-start">
+				<Para type="span" className="text-base font-medium">
+					Sign In as Afochar
+				</Para>
+				<Para type="span" className="text-xs font-regular">
+					aflowcharsss@gmail.com
+				</Para>
+			</div>
+
+			<div class="border-l border-black p-4">
+				<Google className="w-4 h-4" />
+			</div>
+		</Button>
+
+		<form
+			class="flex w-full flex-col items-center gap-16"
+			on:submit|preventDefault={handleLogin}
+		>
+			<div class="flex w-full flex-col items-start">
 				<label for="email">Email</label>
 				<input
 					id="email"
-					class="inputField"
+					class="w-full border-b border-black py-8 text-xl outline-none placeholder:text-xl placeholder:text-black"
 					type="email"
 					placeholder="Your email"
 					bind:value={email}
 				/>
 			</div>
-			<div>
-				<button
-					type="submit"
-					class="button block"
-					aria-live="polite"
+
+			<div class="flex w-full flex-col items-start">
+				<label for="email">Password</label>
+				<input
+					id="password"
+					class="w-full border-b border-black py-8 text-xl outline-none placeholder:text-xl placeholder:text-black"
+					type="password"
+					placeholder="Your password"
+					bind:value={email}
+				/>
+			</div>
+			<div class="-mt-8 flex w-full items-center justify-between">
+				<Button
+					ariaLive="polite"
 					disabled={loading}
+					type="button"
+					background
+					weight="medium"
+					className="text-sm px-12"
 				>
-					<span>{loading ? 'Loading' : 'Send magic link'}</span>
-				</button>
+					<span>{loading ? 'Loading' : 'Sign In'}</span>
+				</Button>
+
+				<Button
+					ariaLive="polite"
+					disabled={loading}
+					type="button"
+					background
+					border
+					weight="medium"
+					className="text-sm bg-white text-black text-right"
+				>
+					Forgot your password?
+				</Button>
 			</div>
 		</form>
 	</div>

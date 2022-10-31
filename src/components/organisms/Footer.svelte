@@ -1,6 +1,21 @@
 <script lang="ts">
 	import Para from '$components/atomics/Para.svelte';
+	import Divider from '$components/moleculs/Divider.svelte';
+	const divider = [
+		{
+			type: 'left',
+			href: 'https://instagram.com/aflowchars',
+			label: 'Copyright'
+		},
+		{
+			type: 'right',
+			href: 'https://instagram.com/aflowchars',
+			label: 'Check'
+		}
+	];
 </script>
+
+<Divider props={divider} />
 
 <footer class="footer">
 	<div class="flex items-center justify-around py-16">

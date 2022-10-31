@@ -8,7 +8,7 @@
 
 	import { divider } from '../data/divider';
 
-	const { socials, blogs, contact, copyright } = divider;
+	const { socials, blogs, contact } = divider;
 </script>
 
 <Head title="Ora Ono Opo Opo" />
@@ -32,5 +32,3 @@
 <section class="contact">
 	<Contact />
 </section>
-
-<Divider props={copyright} />
