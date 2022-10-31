@@ -11,7 +11,9 @@
 		"strict": true,
 		"paths": {
 			"$assets/*": ["src/assets/*"],
-			"$components/*": ["src/components/*"]
+			"$components/*": ["src/components/*"],
+			"$lib/*": ["src/lib/*"],
+			"$data/*": ["src/data/*"]
 		}
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias

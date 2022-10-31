@@ -6,6 +6,6 @@
 
 @layer base {
 	body {
-		@apply font-inter font-light container max-w-screen-xl text-base;
+		@apply container max-w-screen-xl font-inter text-base font-light;
 	}
 }
