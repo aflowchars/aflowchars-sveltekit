@@ -20,7 +20,7 @@
 <div
 	class={`${
 		type === 'image' ? 'h-fit' : ' h-full'
-	}flex min-h-[350px] w-full flex-col items-center justify-between border-[0.5px] border-black`}
+	} flex min-h-[350px] w-full flex-col items-center justify-between border-[0.5px] border-black`}
 >
 	<div
 		class={`flex w-full items-center justify-between border-b border-black ${

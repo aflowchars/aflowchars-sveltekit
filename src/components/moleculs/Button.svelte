@@ -1,17 +1,35 @@
 <script lang="ts">
-	export let type: string | 'link' | 'button' = 'button';
-	export let uppercase: boolean = false;
-	export let href: string = '';
-	export let icon: boolean = false;
-	export let flow: string | 'col' | 'row' = 'row';
-	export let size: string | 'xtra' | 'large' | 'base' | 'small' = 'small';
-	export let border: boolean = false;
-	export let className: string = '';
-	export let background: boolean = false;
-	export let full: boolean = false;
-	export let ariaLive: string = 'polite';
-	export let disabled: boolean = true;
-	export let weight: string | 'semibold' | 'medium' | 'regular' = 'semibold';
+	interface Button {
+		type?: string | 'link' | 'button';
+		uppercase?: boolean;
+		href?: string;
+		icon?: boolean;
+		flow?: string | 'col' | 'row';
+		size?: string | 'xtra' | 'large' | 'base' | 'small';
+		border?: boolean;
+		className?: string;
+		background?: boolean;
+		full?: boolean;
+		ariaLive?: string;
+		disabled?: boolean;
+		weight?: string | 'semibold' | 'medium' | 'regular';
+	}
+
+	export let {
+		type,
+		uppercase,
+		href,
+		icon,
+		flow,
+		size,
+		border,
+		className,
+		background,
+		full,
+		ariaLive,
+		disabled,
+		weight
+	}: Button = {};
 </script>
 
 {#if type === 'button'}
@@ -36,15 +54,14 @@
 		{href}
 		target="_blank"
 		rel="noreferrer"
-		class={`${full && 'w-full'}
-			${uppercase && 'uppercase'}
-			${border && 'py-4 border-b border-black'}
-			${
-				(size === 'xtra' && 'text-2xl') ||
-				(size === 'large' && 'text-lg px-2.5') ||
-				(size === 'base' && 'text-sm tracking-[0.08em]') ||
-				(size === 'small' && 'text-xs')
-			} ${className}`}
+		class={`${full && 'w-full'} ${uppercase && 'uppercase'} ${
+			border && 'py-4 border-b border-black'
+		} ${
+			(size === 'xtra' && 'text-2xl') ||
+			(size === 'large' && 'text-lg px-2.5') ||
+			(size === 'base' && 'text-sm tracking-[0.08em]') ||
+			(size === 'small' && 'text-xs')
+		} ${className}`}
 	>
 		<slot />
 	</a>

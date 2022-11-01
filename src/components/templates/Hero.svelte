@@ -43,7 +43,12 @@
 		/>
 	</div>
 
-	<Button icon flow="col" full>
+	<Button
+		icon
+		flow="col"
+		full
+		className="flex flex-col items-center justify-center"
+	>
 		<Para type="span">Lanjut</Para>
 		<ChevronDown style="w-4 h-4" />
 	</Button>

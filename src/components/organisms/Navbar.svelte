@@ -4,9 +4,14 @@
 
 <header class="header">
 	<nav class="flex items-center justify-between py-8">
-		<Button uppercase>Menu</Button>
+		<Button type="button" uppercase>Menu</Button>
 		<a href="/">
-			<svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<svg
+				class="h-8 w-8"
+				viewBox="0 0 32 32"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
 				<path
 					d="M25.3333 15.7183C21.25 17.1969 18.5187 10.4364 16.4444 15.7183C13.6667 22.7914 10.75 12.9695 6.66666 15.7183"
 					stroke="black"
@@ -19,7 +24,7 @@
 				<line x1="16" y1="20.1667" x2="20.6667" y2="20.1667" stroke="black" />
 			</svg>
 		</a>
-		<Button uppercase>Search</Button>
+		<Button type="button" uppercase>Search</Button>
 	</nav>
 	<div class="h-[0.5px] w-full bg-black" />
 </header>
