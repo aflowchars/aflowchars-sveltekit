@@ -30,7 +30,7 @@
 <div
 	class="grid h-full min-h-[calc(100vh-96px)] grid-cols-12 place-items-center gap-16"
 >
-	<div class="col-start-1 col-end-6 py-24">
+	<div class="col-start-1 col-end-7 py-24">
 		<Card
 			type="image"
 			tag="Login"
@@ -40,11 +40,11 @@
 		/>
 	</div>
 
-	<div class="col-start-6 col-end-7 h-full place-self-center">
+	<div class="col-start-7 col-end-8 h-full place-self-center">
 		<div class="h-full w-px bg-black" />
 	</div>
 
-	<div class="col-start-7 col-end-12 w-full py-24" aria-live="polite">
+	<div class="col-start-8 col-end-13 w-full py-24" aria-live="polite">
 		<Heading type="large">Sign in Aflowchars</Heading>
 
 		<Button

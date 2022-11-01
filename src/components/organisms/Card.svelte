@@ -37,7 +37,7 @@
 		}`}
 	>
 		{#if type === 'avatar'}
-			<Avatar src="afochar-s-photo-hero.png" alt="Afochar S" />
+			<Avatar className="mb-4" src="afochar-s-photo-hero.png" alt="Afochar S" />
 		{:else if type === 'text'}
 			<div class="h-full max-h-[196px] w-full">
 				<img class="h-full w-full object-cover" src={image} {alt} />

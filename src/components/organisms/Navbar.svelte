@@ -1,30 +1,118 @@
-<script>
+<script lang="ts">
+	import Aflowchars from '$assets/icons/aflowchars.svelte';
+	import Close from '$assets/icons/close.svelte';
 	import Button from '$components/moleculs/Button.svelte';
+
+	let menuRef: boolean = false;
+	let searchRef: boolean = false;
 </script>
 
-<header class="header">
+<header class="header relative">
 	<nav class="flex items-center justify-between py-8">
-		<Button type="button" uppercase>Menu</Button>
-		<a href="/">
-			<svg
-				class="h-8 w-8"
-				viewBox="0 0 32 32"
-				fill="none"
-				xmlns="http://www.w3.org/2000/svg"
-			>
-				<path
-					d="M25.3333 15.7183C21.25 17.1969 18.5187 10.4364 16.4444 15.7183C13.6667 22.7914 10.75 12.9695 6.66666 15.7183"
-					stroke="black"
-				/>
-				<path
-					d="M30 16C30 19.5609 28.6431 22.9879 26.2056 25.5837C23.768 28.1794 20.4329 29.7488 16.8791 29.9724C13.3252 30.196 9.81975 29.057 7.07606 26.7872C4.33238 24.5174 2.55669 21.2874 2.11039 17.7547C1.6641 14.2219 2.58074 10.6518 4.67376 7.77101C6.76678 4.89021 9.87888 2.91522 13.3767 2.24798C16.8744 1.58074 20.495 2.27141 23.5016 4.17941C26.5081 6.08741 28.6746 9.06936 29.5602 12.5183"
-					stroke="black"
-				/>
-				<line x1="11.3333" y1="10.8333" x2="16" y2="10.8333" stroke="black" />
-				<line x1="16" y1="20.1667" x2="20.6667" y2="20.1667" stroke="black" />
-			</svg>
-		</a>
-		<Button type="button" uppercase>Search</Button>
+		<Button onClick={() => (menuRef = !menuRef)} type="button" uppercase>
+			Menu
+		</Button>
+		<Button type="link" href="/">
+			<Aflowchars />
+		</Button>
+		<Button type="button" uppercase onClick={() => (searchRef = !searchRef)}>
+			Search
+		</Button>
 	</nav>
 	<div class="h-[0.5px] w-full bg-black" />
+
+	<!-- Click Menu -->
+	<nav
+		class={`navbar-menu justify-betweens absolute inset-0 ${
+			menuRef ? 'flex' : 'hidden'
+		} h-full items-center border-b border-black bg-white`}
+	>
+		<ul class="flex h-full w-full items-center justify-between">
+			<Button
+				type="button"
+				onClick={() => (menuRef = !menuRef)}
+				className="py-4"
+			>
+				<Close className="w-4 h-4" />
+			</Button>
+			<li>
+				<Button
+					uppercase
+					size="small"
+					type="link"
+					href="https://instagram.com/aflowchars"
+				>
+					Home
+				</Button>
+			</li>
+			<li>
+				<Button
+					uppercase
+					size="small"
+					type="link"
+					href="https://instagram.com/aflowchars"
+				>
+					Blogs
+				</Button>
+			</li>
+
+			<li>
+				<Button
+					uppercase
+					size="small"
+					type="link"
+					href="https://instagram.com/aflowchars"
+				>
+					Video
+				</Button>
+			</li>
+			<li>
+				<Button
+					uppercase
+					size="small"
+					type="link"
+					href="https://instagram.com/aflowchars"
+				>
+					Docs
+				</Button>
+			</li>
+			<li>
+				<a href="/">
+					<Aflowchars />
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<nav
+		class={`navbar-menu justify-betweens absolute inset-0 ${
+			searchRef ? 'flex' : 'hidden'
+		} h-full items-center border-b border-black bg-white`}
+	>
+		<ul
+			class="flex h-full w-full flex-row-reverse items-center justify-between"
+		>
+			<Button
+				type="button"
+				onClick={() => (searchRef = !searchRef)}
+				className="py-4"
+			>
+				<Close className="w-4 h-4" />
+			</Button>
+
+			<form action="#" class="h-full w-full px-16">
+				<input
+					type="text"
+					class="h-full w-full bg-white text-right outline-none placeholder:text-black"
+					placeholder="Ketikkan yang anda cari, jangan lupa pencet enter kalo selesai"
+				/>
+			</form>
+
+			<li>
+				<a href="/">
+					<Aflowchars />
+				</a>
+			</li>
+		</ul>
+	</nav>
 </header>

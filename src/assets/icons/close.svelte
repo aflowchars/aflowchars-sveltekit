@@ -1,4 +1,13 @@
-<svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<script lang="ts">
+	export let className: string = '';
+</script>
+
+<svg
+	class={className || 'h-3 w-3'}
+	viewBox="0 0 12 12"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<g clip-path="url(#clip0_3_46)">
 		<path
 			d="M9.375 2.625L2.625 9.375"

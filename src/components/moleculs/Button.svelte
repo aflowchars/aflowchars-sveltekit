@@ -13,6 +13,8 @@
 		ariaLive?: string;
 		disabled?: boolean;
 		weight?: string | 'semibold' | 'medium' | 'regular';
+		onClick?: VoidFunction;
+		isBlank?: boolean;
 	}
 
 	export let {
@@ -28,12 +30,15 @@
 		full,
 		ariaLive,
 		disabled,
-		weight
+		weight,
+		onClick,
+		isBlank
 	}: Button = {};
 </script>
 
 {#if type === 'button'}
 	<button
+		on:click={onClick}
 		aria-live={`off` || ariaLive}
 		{disabled}
 		class={`${full && 'w-full'} ${
@@ -52,7 +57,7 @@
 {:else}
 	<a
 		{href}
-		target="_blank"
+		target={isBlank ? '_blank' : ''}
 		rel="noreferrer"
 		class={`${full && 'w-full'} ${uppercase && 'uppercase'} ${
 			border && 'py-4 border-b border-black'
