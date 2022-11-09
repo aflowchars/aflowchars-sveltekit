@@ -5,11 +5,13 @@
 	import Para from '$components/atomics/Para.svelte';
 	import Button from '$components/moleculs/Button.svelte';
 	import Card from '$components/organisms/Card.svelte';
+	import Form from '$components/organisms/Form.svelte';
 	import Head from '$components/utilities/Head.svelte';
-	import { supabase } from '../../supabase';
+	import { supabase } from '../../../supabase';
 
 	let loading = false;
 	let email = '';
+	let password = '';
 
 	const handleLogin = async () => {
 		try {
@@ -23,6 +25,8 @@
 			loading = false;
 		}
 	};
+
+	console.log({ email, password });
 </script>
 
 <Head title="Login" />
@@ -73,55 +77,6 @@
 			</div>
 		</Button>
 
-		<form
-			class="flex w-full flex-col items-center gap-16"
-			on:submit|preventDefault={handleLogin}
-		>
-			<div class="flex w-full flex-col items-start">
-				<label for="email">Email</label>
-				<input
-					id="email"
-					class="w-full border-b border-black py-8 text-xl outline-none placeholder:text-xl placeholder:text-black"
-					type="email"
-					placeholder="Your email"
-					bind:value={email}
-				/>
-			</div>
-
-			<div class="flex w-full flex-col items-start">
-				<label for="email">Password</label>
-				<input
-					id="password"
-					class="w-full border-b border-black py-8 text-xl outline-none placeholder:text-xl placeholder:text-black"
-					type="password"
-					placeholder="Your password"
-					bind:value={email}
-				/>
-			</div>
-			<div class="-mt-8 flex w-full items-center justify-between">
-				<Button
-					ariaLive="polite"
-					disabled={loading}
-					type="button"
-					background
-					weight="medium"
-					className="text-sm px-12"
-				>
-					<span>{loading ? 'Loading' : 'Sign In'}</span>
-				</Button>
-
-				<Button
-					ariaLive="polite"
-					disabled={loading}
-					type="button"
-					background
-					border
-					weight="medium"
-					className="text-sm bg-white text-black text-right"
-				>
-					Forgot your password?
-				</Button>
-			</div>
-		</form>
+		<Form {loading} {email} onSubmit={handleLogin} {password} />
 	</div>
 </div>

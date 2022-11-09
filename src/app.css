@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 @layer base {
-	body {
+	.wrapper {
 		@apply container max-w-screen-xl font-inter text-base font-light;
 	}
 }

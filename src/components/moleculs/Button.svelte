@@ -15,6 +15,7 @@
 		weight?: string | 'semibold' | 'medium' | 'regular';
 		onClick?: VoidFunction;
 		isBlank?: boolean;
+		props?: any;
 	}
 
 	export let {
